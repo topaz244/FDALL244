@@ -3,27 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Afdal IT Solution</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    color:white;
-    overflow-x:hidden;
 
-    background:
-    radial-gradient(circle at 20% 30%, #1e3a8a 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, #7c3aed 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, #0ea5e9 0%, transparent 50%),
-    #020617;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
-    <div class="stars"></div>
-    .stars{
+
+/* BACKGROUND GALAXY */
+
+body{
+color:white;
+overflow-x:hidden;
+
+background:
+radial-gradient(circle at 20% 30%, #1e3a8a 0%, transparent 40%),
+radial-gradient(circle at 80% 70%, #7c3aed 0%, transparent 40%),
+radial-gradient(circle at 50% 50%, #0ea5e9 0%, transparent 50%),
+#020617;
+}
+
+
+/* STARS */
+
+.stars{
 position:fixed;
 width:100%;
 height:100%;
 background:transparent;
+
 box-shadow:
 100px 200px white,
 300px 400px white,
@@ -32,91 +45,158 @@ box-shadow:
 900px 300px white,
 1200px 200px white,
 1500px 500px white,
-1700px 100px white;
+1700px 100px white,
+200px 600px white,
+600px 300px white,
+900px 500px white;
+
 animation:twinkle 5s infinite alternate;
+z-index:-1;
 }
 
 @keyframes twinkle{
 from{opacity:0.3}
 to{opacity:1}
 }
-    
+
+
 /* HEADER */
+
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+position:fixed;
+width:100%;
+top:0;
+backdrop-filter:blur(10px);
+background:rgba(2,6,23,0.5);
 }
+
+
+/* LOGO */
 
 .logo{
-    font-size:22px;
-    font-weight:bold;
+font-size:22px;
+font-weight:bold;
+background:linear-gradient(90deg,#38bdf8,#a855f7,#f43f5e);
+background-size:300%;
+-webkit-background-clip:text;
+color:transparent;
+
+animation:gradientMove 6s infinite linear;
 }
 
+
 /* MENU */
+
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-size:15px;
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:15px;
+transition:0.3s;
 }
 
 nav a:hover{
-    color:#38bdf8;
+color:#38bdf8;
 }
 
+
 /* HERO */
+
 .hero{
-    text-align:center;
-    margin-top:120px;
+text-align:center;
+margin-top:200px;
+position:relative;
 }
 
 .hero h1{
-    font-size:50px;
+font-size:60px;
+font-weight:700;
 }
+
 
 /* GRADIENT TEXT */
+
 .gradient{
-    background:linear-gradient(90deg,#38bdf8,#a855f7,#f43f5e);
-    -webkit-background-clip:text;
-    color:transparent;
+background:linear-gradient(90deg,#38bdf8,#a855f7,#f43f5e);
+background-size:300%;
+-webkit-background-clip:text;
+color:transparent;
+animation:gradientMove 6s linear infinite;
 }
+
+@keyframes gradientMove{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
 
 /* TYPING */
+
 #typing{
-    font-size:32px;
-    margin-top:20px;
-    font-weight:500;
+font-size:34px;
+margin-top:20px;
+font-weight:500;
+opacity:0.9;
 }
 
+
 /* FLOATING PLANETS */
+
 .planet{
-    position:absolute;
-    font-size:28px;
-    animation:orbit linear infinite;
+position:absolute;
+font-size:30px;
+animation:orbit linear infinite;
 }
 
 @keyframes orbit{
-    from{
-        transform:rotate(0deg) translateX(250px) rotate(0deg);
-    }
-    to{
-        transform:rotate(360deg) translateX(250px) rotate(-360deg);
-    }
+from{
+transform:rotate(0deg) translateX(260px) rotate(0deg);
+}
+to{
+transform:rotate(360deg) translateX(260px) rotate(-360deg);
+}
 }
 
-.planet1{ top:40%; left:50%; animation-duration:20s;}
-.planet2{ top:40%; left:50%; animation-duration:30s;}
-.planet3{ top:40%; left:50%; animation-duration:40s;}
-.planet4{ top:40%; left:50%; animation-duration:50s;}
+.planet1{ top:45%; left:50%; animation-duration:20s;}
+.planet2{ top:45%; left:50%; animation-duration:28s;}
+.planet3{ top:45%; left:50%; animation-duration:35s;}
+.planet4{ top:45%; left:50%; animation-duration:45s;}
+
+
+/* BUTTON */
+
+.btn{
+margin-top:35px;
+display:inline-block;
+padding:12px 28px;
+border-radius:30px;
+
+background:linear-gradient(90deg,#38bdf8,#a855f7);
+color:white;
+text-decoration:none;
+font-weight:bold;
+
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #38bdf8;
+}
 
 </style>
 </head>
 
 <body>
 
+<div class="stars"></div>
+
 <header>
+
 <div class="logo">Afdal IT Solution</div>
 
 <nav>
@@ -125,6 +205,7 @@ nav a:hover{
 <a href="#">Portfolio</a>
 <a href="#">Contact</a>
 </nav>
+
 </header>
 
 
@@ -134,14 +215,18 @@ nav a:hover{
 
 <div id="typing"></div>
 
+<a class="btn" href="#">View Portfolio</a>
+
 </div>
 
 
 <!-- FLOATING TOOLS -->
+
 <div class="planet planet1">💻</div>
 <div class="planet planet2">🧠</div>
 <div class="planet planet3">⚙️</div>
 <div class="planet planet4">🖥️</div>
+
 
 
 <script>
@@ -172,7 +257,7 @@ currentText.substring(0,j--);
 
 if(!isDeleting && j === currentText.length){
 isDeleting = true;
-setTimeout(type,1000);
+setTimeout(type,1200);
 return;
 }
 
@@ -184,7 +269,7 @@ i = 0;
 }
 }
 
-setTimeout(type,isDeleting?80:160);
+setTimeout(type,isDeleting?80:140);
 }
 
 type();
@@ -193,4 +278,3 @@ type();
 
 </body>
 </html>
-
