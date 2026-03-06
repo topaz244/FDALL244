@@ -17,12 +17,25 @@ font-family:Arial, Helvetica, sans-serif;
 
 /* BACKGROUND GALAXY */
 
-body{
+/* BACKGROUND GALAXY */
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
 overflow-x:hidden;
+
+/* DARK GALAXY BACKGROUND */
+
+background:
+radial-gradient(circle at 20% 30%, rgba(30,58,138,0.35) 0%, transparent 55%),
+radial-gradient(circle at 80% 70%, rgba(124,58,237,0.30) 0%, transparent 55%),
+radial-gradient(circle at 50% 50%, rgba(14,165,233,0.20) 0%, transparent 60%),
+#020617;
+
+background-attachment: fixed;
+min-height:100vh;
+}
 
 /* DARK GALAXY BACKGROUND */
 
@@ -41,6 +54,9 @@ min-height:100vh;
 /* STARS */
 
 .stars{
+background:transparent;
+width:1px;
+height:1px;
 position:fixed;
 width:100%;
 height:100%;
@@ -291,4 +307,5 @@ type();
 
 </body>
 </html>
+
 
