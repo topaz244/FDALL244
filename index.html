@@ -1,31 +1,221 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Afdal IT Solution</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afdal IT Solution</title>
 
-    <!-- link CSS -->
-    <link rel="stylesheet" href="style.css">
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:#0b1220;
+color:white;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:#050a18;
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:white;
+font-size:15px;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+margin:0;
+}
+
+#typing{
+color:#38bdf8;
+border-right:3px solid;
+padding-right:5px;
+}
+
+.hero p{
+opacity:0.8;
+margin-top:10px;
+}
+
+/* BUTTON */
+
+.btn{
+margin-top:25px;
+padding:12px 28px;
+background:#38bdf8;
+border:none;
+border-radius:8px;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* SECTION */
+
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+.card{
+background:#121a2e;
+padding:25px;
+margin:15px;
+border-radius:12px;
+display:inline-block;
+width:250px;
+}
+
+/* FOOTER */
+
+footer{
+padding:30px;
+text-align:center;
+background:#050a18;
+margin-top:50px;
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Afdal IT Solution</h1>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Service</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact</a>
-    </nav>
+<div class="logo">Afdal IT Solution</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Skills</a>
+<a href="#">Projects</a>
+<a href="#">Contact</a>
+</nav>
+
 </header>
 
-<section class="hero">
-    <h2 id="typing"></h2>
-</section>
+<div class="hero">
 
-<!-- link JS -->
-<script src="script.js"></script>
+<h1>
+Building <span id="typing"></span>
+</h1>
+
+<p>Creative Designer • AI Explorer • Digital Creator</p>
+
+<button class="btn">View Portfolio</button>
+
+</div>
+
+<div class="section">
+
+<h2>My Skills</h2>
+
+<div class="card">
+<h3>Graphic Design</h3>
+<p>Poster, Branding, Visual Identity</p>
+</div>
+
+<div class="card">
+<h3>AI Tools</h3>
+<p>AI Art, Prompt Engineering</p>
+</div>
+
+<div class="card">
+<h3>Creative Content</h3>
+<p>Concept, Storytelling</p>
+</div>
+
+</div>
+
+<footer>
+
+© 2053 Afdal IT Solution
+
+</footer>
+
+<script>
+
+const words = [
+"Graphic Designer",
+"AI Artist",
+"Creative Thinker",
+"Digital Creator",
+"Visual Storyteller"
+];
+
+let i = 0;
+let j = 0;
+let currentWord = "";
+let isDeleting = false;
+
+function type(){
+
+currentWord = words[i];
+
+if(isDeleting){
+j--;
+}else{
+j++;
+}
+
+document.getElementById("typing").textContent = currentWord.substring(0,j);
+
+if(!isDeleting && j === currentWord.length){
+isDeleting = true;
+setTimeout(type,1200);
+return;
+}
+
+if(isDeleting && j === 0){
+isDeleting = false;
+i++;
+
+if(i === words.length){
+i = 0;
+}
+
+}
+
+setTimeout(type,isDeleting ? 60 : 120);
+
+}
+
+type();
+
+</script>
 
 </body>
 </html>
