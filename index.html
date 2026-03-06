@@ -18,14 +18,23 @@ font-family:Arial, Helvetica, sans-serif;
 /* BACKGROUND GALAXY */
 
 body{
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
 color:white;
 overflow-x:hidden;
 
+/* DARK GALAXY BACKGROUND */
+
 background:
-radial-gradient(circle at 20% 30%, #1e3a8a 0%, transparent 40%),
-radial-gradient(circle at 80% 70%, #7c3aed 0%, transparent 40%),
-radial-gradient(circle at 50% 50%, #0ea5e9 0%, transparent 50%),
+radial-gradient(circle at 20% 30%, rgba(30,58,138,0.4) 0%, transparent 50%),
+radial-gradient(circle at 80% 70%, rgba(124,58,237,0.35) 0%, transparent 50%),
+radial-gradient(circle at 50% 50%, rgba(14,165,233,0.25) 0%, transparent 60%),
 #020617;
+
+background-attachment: fixed;
+min-height:100vh;
+}
 }
 
 
@@ -107,8 +116,12 @@ color:#38bdf8;
 /* HERO */
 
 .hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-margin-top:200px;
 position:relative;
 }
 
@@ -278,3 +291,4 @@ type();
 
 </body>
 </html>
+
